@@ -6,15 +6,18 @@ class Calculator {
   minus = (a, b) => {
     return a - b;
   };
+
   multiple = (a, b) => {
     return a * b;
   };
+  
   divide = (a, b) => {
     if (b === 0) {
         throw new DivideZeroError();
     }
     return a / b;
-    }
+  }
+
   isNegative = (a) => {
     return a < 0;
   };
