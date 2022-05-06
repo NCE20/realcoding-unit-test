@@ -1,3 +1,5 @@
+import Calculator from "../js/calculator/Calculator"
+
 beforeAll(() => {
     console.log("모든 테스트를 실행하기 전 한번만 실행된다.");
 });
@@ -16,10 +18,10 @@ afterAll(() => {
 
 describe("음수 양수 판단", () => {
     const cal = new Calculator();
-    test("isNegative에 10을 넣으면 false를 반환한다.", () => {
-        expect(cal.isNegative(10)).toBeFalsy();
+    test("isNegative에 5을 넣으면 false를 반환한다.", () => {
+        expect(cal.isNegative(5)).toBeFalsy();
     });
-    test("isNegative에 -1을 넣으면 false를 반환한다.", () => {
+    test("isNegative에 -1을 넣으면 true를 반환한다.", () => {
         expect(cal.isNegative(-1)).toBeTruthy();
     });
     test("isNegative에 0을 넣으면 true가 아니다.", () => {
