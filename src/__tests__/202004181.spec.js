@@ -19,7 +19,7 @@ afterAll(() => {
 describe("음수 양수 판단", () => {
   const cal = new Calculator();
   test("isNegative에 10을 넣으면 false를 반환한다.", () => {
-      expect(cal.isNegative(10)).toBeFalsy();
+      expect(cal.isNegative(12)).toBeFalsy();
   });
   test("isNegative에 -1을 넣으면 false를 반환한다.", () => {
       expect(cal.isNegative(-1)).toBeTruthy();
