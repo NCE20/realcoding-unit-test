@@ -36,3 +36,24 @@ afterEach(() => {
 afterAll(() => {
     console.log("모든 테스트가 완료된 후 한번만 실행된다.");
 });
+
+describe("가상 함수 테스트해보기", () => {
+    test("customCalculation는 전달 된 함수를 호출시킨다.", () => {
+      const cal = new Calculator();
+      const mock = jest.fn();
+      cal.customCalculation(mock, ["a", "b", "c"]);
+      expect(mock).toHaveBeenCalled();
+    });
+    test("customCalculation에 함수와 1, 2, 3인자를 전달하면, 전달 된 함수가 인자 1, 2, 3을 받아 호출한다.", () => {
+      const cal = new Calculator();
+      const mock = jest.fn();
+      cal.customCalculation(mock, [1, 2, 3]);
+      expect(mock).toHaveBeenCalledWith([1, 2, 3]);
+    });
+    test("abs함수는 Math.abs를 호출한다.", () => {
+      const cal = new Calculator();
+      const mock = jest.spyOn(Math, "abs");
+      cal.abs(-7);
+      expect(mock).toHaveBeenCalled();
+    });
+});
